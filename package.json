@@ -1,0 +1,21 @@
+{
+    "name": "com.foreverplane.inputsamples",
+    "version": "0.0.1",
+    "displayName": "Input samples",
+    "description": "This is an input samples package",
+    "unity": "2021.3",
+    "unityRelease": "0b5",
+
+    "dependencies": {
+      "com.unity.inputsystem": "1.4.3"
+   },
+   "keywords": [
+      "Input",
+      "Samples",
+      "New"
+    ],
+    "author": {
+      "name": "Foreverplane",
+      "email": "foreverplane@gmail.com"
+    }
+  }
