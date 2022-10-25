@@ -12,6 +12,9 @@ public class PlayerInput : Singleton<PlayerInput> {
 
 	public bool IsRightMousePressed => _PlayerControls.ActionMap.RightMouseButton.IsPressed();
 	public bool IsLeftMousePressed => _PlayerControls.ActionMap.LeftMouseButton.IsPressed();
+	
+	public bool IsRPressed => _PlayerControls.ActionMap.R.IsPressed();
+	
 	private PlayerControls _PlayerControls;
 	void Awake() {
 		_PlayerControls = new PlayerControls();

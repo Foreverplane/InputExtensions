@@ -71,6 +71,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""R"",
+                    ""type"": ""Button"",
+                    ""id"": ""3d68589c-e27e-4caa-84fa-a02c53001276"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -282,6 +291,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""LeftMouseButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""469d1567-d9f9-4557-9988-56feb946c45a"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""R"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2393160c-ac2a-4816-8da5-d22843c9a98c"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""R"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -317,6 +348,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_ActionMap_MoveWithMouse = m_ActionMap.FindAction("MoveWithMouse", throwIfNotFound: true);
         m_ActionMap_RightMouseButton = m_ActionMap.FindAction("RightMouseButton", throwIfNotFound: true);
         m_ActionMap_LeftMouseButton = m_ActionMap.FindAction("LeftMouseButton", throwIfNotFound: true);
+        m_ActionMap_R = m_ActionMap.FindAction("R", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -381,6 +413,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_ActionMap_MoveWithMouse;
     private readonly InputAction m_ActionMap_RightMouseButton;
     private readonly InputAction m_ActionMap_LeftMouseButton;
+    private readonly InputAction m_ActionMap_R;
     public struct ActionMapActions
     {
         private @PlayerControls m_Wrapper;
@@ -390,6 +423,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @MoveWithMouse => m_Wrapper.m_ActionMap_MoveWithMouse;
         public InputAction @RightMouseButton => m_Wrapper.m_ActionMap_RightMouseButton;
         public InputAction @LeftMouseButton => m_Wrapper.m_ActionMap_LeftMouseButton;
+        public InputAction @R => m_Wrapper.m_ActionMap_R;
         public InputActionMap Get() { return m_Wrapper.m_ActionMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -414,6 +448,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @LeftMouseButton.started -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnLeftMouseButton;
                 @LeftMouseButton.performed -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnLeftMouseButton;
                 @LeftMouseButton.canceled -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnLeftMouseButton;
+                @R.started -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnR;
+                @R.performed -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnR;
+                @R.canceled -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnR;
             }
             m_Wrapper.m_ActionMapActionsCallbackInterface = instance;
             if (instance != null)
@@ -433,6 +470,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @LeftMouseButton.started += instance.OnLeftMouseButton;
                 @LeftMouseButton.performed += instance.OnLeftMouseButton;
                 @LeftMouseButton.canceled += instance.OnLeftMouseButton;
+                @R.started += instance.OnR;
+                @R.performed += instance.OnR;
+                @R.canceled += instance.OnR;
             }
         }
     }
@@ -453,5 +493,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnMoveWithMouse(InputAction.CallbackContext context);
         void OnRightMouseButton(InputAction.CallbackContext context);
         void OnLeftMouseButton(InputAction.CallbackContext context);
+        void OnR(InputAction.CallbackContext context);
     }
 }
