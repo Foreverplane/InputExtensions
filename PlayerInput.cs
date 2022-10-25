@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +15,8 @@ public class PlayerInput : Singleton<PlayerInput> {
 	public bool IsLeftMousePressed => _PlayerControls.ActionMap.LeftMouseButton.IsPressed();
 	
 	public bool IsRPressed => _PlayerControls.ActionMap.R.IsPressed();
-	
+	public bool IsRWasPressedLastFrame => _PlayerControls.ActionMap.R.WasPressedThisFrame();
+
 	private PlayerControls _PlayerControls;
 	void Awake() {
 		_PlayerControls = new PlayerControls();
@@ -25,4 +27,6 @@ public class PlayerInput : Singleton<PlayerInput> {
 	void OnDisable() {
 		_PlayerControls.Disable();
 	}
+
+
 }
