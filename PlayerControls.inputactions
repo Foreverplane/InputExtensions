@@ -272,6 +272,17 @@
                 },
                 {
                     "name": "",
+                    "id": "21d0d069-800d-498f-86e9-0d01a08abace",
+                    "path": "<Pointer>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftMouseButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "469d1567-d9f9-4557-9988-56feb946c45a",
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",

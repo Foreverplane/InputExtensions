@@ -7,9 +7,11 @@ using UnityEngine;
 public class PlayerInput : Singleton<PlayerInput> {
 
 	public bool JumpIsPressed => _PlayerControls.ActionMap.Jump.IsPressed();
-	public Vector2 MoveVector => _PlayerControls.ActionMap.RightMouseButton.IsPressed() ?
+	public Vector2 MoveVectorWithMouse => _PlayerControls.ActionMap.RightMouseButton.IsPressed() ?
 		_PlayerControls.ActionMap.MoveWithMouse.ReadValue<Vector2>() :
 		_PlayerControls.ActionMap.Move.ReadValue<Vector2>();
+
+	public Vector2 MoveVector => _PlayerControls.ActionMap.Move.ReadValue<Vector2>();
 
 	public bool IsRightMousePressed => _PlayerControls.ActionMap.RightMouseButton.IsPressed();
 	public bool IsLeftMousePressed => _PlayerControls.ActionMap.LeftMouseButton.IsPressed();
@@ -18,6 +20,8 @@ public class PlayerInput : Singleton<PlayerInput> {
 	public bool IsRWasPressedLastFrame => _PlayerControls.ActionMap.R.WasPressedThisFrame();
 
 	private PlayerControls _PlayerControls;
+	[SerializeField]
+	private Vector2 _MoveVector;
 	void Awake() {
 		_PlayerControls = new PlayerControls();
 	}
@@ -28,5 +32,7 @@ public class PlayerInput : Singleton<PlayerInput> {
 		_PlayerControls.Disable();
 	}
 
-
+	private void Update() {
+		_MoveVector = MoveVector;
+	}
 }
