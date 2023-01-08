@@ -37,6 +37,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""R"",
+                    ""type"": ""Button"",
+                    ""id"": ""53897713-6667-46f8-bff6-7d45283bf2ff"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": true
+                },
+                {
                     ""name"": ""Move"",
                     ""type"": ""Value"",
                     ""id"": ""904048c1-73f5-4fb9-8ed3-67fe4d672c98"",
@@ -73,9 +82,36 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""R"",
+                    ""name"": ""Action.0"",
                     ""type"": ""Button"",
                     ""id"": ""3d68589c-e27e-4caa-84fa-a02c53001276"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Action.1"",
+                    ""type"": ""Button"",
+                    ""id"": ""dbafcc01-00ea-431c-b4bf-64b1ee5d2ea2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Action.2"",
+                    ""type"": ""Button"",
+                    ""id"": ""f155ad58-afd9-4dad-bce3-e4b3adeb74c7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Action.3"",
+                    ""type"": ""Button"",
+                    ""id"": ""39a351fc-9e3b-4d7a-a38f-c6a30928dcc8"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -310,17 +346,127 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""R"",
+                    ""action"": ""Action.0"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""2393160c-ac2a-4816-8da5-d22843c9a98c"",
-                    ""path"": ""<Keyboard>/r"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
+                    ""action"": ""Action.0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bc206685-f60a-4d65-8fa0-49e97b81915b"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Action.0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4c0e7df2-79c8-410e-81bd-40b70902ff9c"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Action.1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7e3ac8d8-ff0e-483a-8380-c3bff5125df0"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Action.1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b39e2dc6-beaa-4935-8ee3-b03b63ada173"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Action.2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""50a646ea-8c1d-4297-9344-966ce4a11216"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Action.2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""55931fcf-b374-4c4e-812f-0f2b12062856"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Action.2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""33ca51e8-2129-4616-a625-8dab39423b68"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Action.3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a5c96c77-1fc5-4247-9f9a-f30a707922cd"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Action.3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""79696d55-b726-4da6-80df-55cc06183cf9"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""ControlScheme"",
+                    ""action"": ""R"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f5f0ccd3-8d3a-44f2-a83c-a0e743f0a40d"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""ControlScheme"",
                     ""action"": ""R"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -355,11 +501,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         // ActionMap
         m_ActionMap = asset.FindActionMap("ActionMap", throwIfNotFound: true);
         m_ActionMap_Jump = m_ActionMap.FindAction("Jump", throwIfNotFound: true);
+        m_ActionMap_R = m_ActionMap.FindAction("R", throwIfNotFound: true);
         m_ActionMap_Move = m_ActionMap.FindAction("Move", throwIfNotFound: true);
         m_ActionMap_MoveWithMouse = m_ActionMap.FindAction("MoveWithMouse", throwIfNotFound: true);
         m_ActionMap_RightMouseButton = m_ActionMap.FindAction("RightMouseButton", throwIfNotFound: true);
         m_ActionMap_LeftMouseButton = m_ActionMap.FindAction("LeftMouseButton", throwIfNotFound: true);
-        m_ActionMap_R = m_ActionMap.FindAction("R", throwIfNotFound: true);
+        m_ActionMap_Action0 = m_ActionMap.FindAction("Action.0", throwIfNotFound: true);
+        m_ActionMap_Action1 = m_ActionMap.FindAction("Action.1", throwIfNotFound: true);
+        m_ActionMap_Action2 = m_ActionMap.FindAction("Action.2", throwIfNotFound: true);
+        m_ActionMap_Action3 = m_ActionMap.FindAction("Action.3", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -420,21 +570,29 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_ActionMap;
     private IActionMapActions m_ActionMapActionsCallbackInterface;
     private readonly InputAction m_ActionMap_Jump;
+    private readonly InputAction m_ActionMap_R;
     private readonly InputAction m_ActionMap_Move;
     private readonly InputAction m_ActionMap_MoveWithMouse;
     private readonly InputAction m_ActionMap_RightMouseButton;
     private readonly InputAction m_ActionMap_LeftMouseButton;
-    private readonly InputAction m_ActionMap_R;
+    private readonly InputAction m_ActionMap_Action0;
+    private readonly InputAction m_ActionMap_Action1;
+    private readonly InputAction m_ActionMap_Action2;
+    private readonly InputAction m_ActionMap_Action3;
     public struct ActionMapActions
     {
         private @PlayerControls m_Wrapper;
         public ActionMapActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Jump => m_Wrapper.m_ActionMap_Jump;
+        public InputAction @R => m_Wrapper.m_ActionMap_R;
         public InputAction @Move => m_Wrapper.m_ActionMap_Move;
         public InputAction @MoveWithMouse => m_Wrapper.m_ActionMap_MoveWithMouse;
         public InputAction @RightMouseButton => m_Wrapper.m_ActionMap_RightMouseButton;
         public InputAction @LeftMouseButton => m_Wrapper.m_ActionMap_LeftMouseButton;
-        public InputAction @R => m_Wrapper.m_ActionMap_R;
+        public InputAction @Action0 => m_Wrapper.m_ActionMap_Action0;
+        public InputAction @Action1 => m_Wrapper.m_ActionMap_Action1;
+        public InputAction @Action2 => m_Wrapper.m_ActionMap_Action2;
+        public InputAction @Action3 => m_Wrapper.m_ActionMap_Action3;
         public InputActionMap Get() { return m_Wrapper.m_ActionMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -447,6 +605,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Jump.started -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnJump;
+                @R.started -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnR;
+                @R.performed -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnR;
+                @R.canceled -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnR;
                 @Move.started -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnMove;
@@ -459,9 +620,18 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @LeftMouseButton.started -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnLeftMouseButton;
                 @LeftMouseButton.performed -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnLeftMouseButton;
                 @LeftMouseButton.canceled -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnLeftMouseButton;
-                @R.started -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnR;
-                @R.performed -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnR;
-                @R.canceled -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnR;
+                @Action0.started -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnAction0;
+                @Action0.performed -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnAction0;
+                @Action0.canceled -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnAction0;
+                @Action1.started -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnAction1;
+                @Action1.performed -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnAction1;
+                @Action1.canceled -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnAction1;
+                @Action2.started -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnAction2;
+                @Action2.performed -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnAction2;
+                @Action2.canceled -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnAction2;
+                @Action3.started -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnAction3;
+                @Action3.performed -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnAction3;
+                @Action3.canceled -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnAction3;
             }
             m_Wrapper.m_ActionMapActionsCallbackInterface = instance;
             if (instance != null)
@@ -469,6 +639,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @R.started += instance.OnR;
+                @R.performed += instance.OnR;
+                @R.canceled += instance.OnR;
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
@@ -481,9 +654,18 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @LeftMouseButton.started += instance.OnLeftMouseButton;
                 @LeftMouseButton.performed += instance.OnLeftMouseButton;
                 @LeftMouseButton.canceled += instance.OnLeftMouseButton;
-                @R.started += instance.OnR;
-                @R.performed += instance.OnR;
-                @R.canceled += instance.OnR;
+                @Action0.started += instance.OnAction0;
+                @Action0.performed += instance.OnAction0;
+                @Action0.canceled += instance.OnAction0;
+                @Action1.started += instance.OnAction1;
+                @Action1.performed += instance.OnAction1;
+                @Action1.canceled += instance.OnAction1;
+                @Action2.started += instance.OnAction2;
+                @Action2.performed += instance.OnAction2;
+                @Action2.canceled += instance.OnAction2;
+                @Action3.started += instance.OnAction3;
+                @Action3.performed += instance.OnAction3;
+                @Action3.canceled += instance.OnAction3;
             }
         }
     }
@@ -500,10 +682,14 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     public interface IActionMapActions
     {
         void OnJump(InputAction.CallbackContext context);
+        void OnR(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnMoveWithMouse(InputAction.CallbackContext context);
         void OnRightMouseButton(InputAction.CallbackContext context);
         void OnLeftMouseButton(InputAction.CallbackContext context);
-        void OnR(InputAction.CallbackContext context);
+        void OnAction0(InputAction.CallbackContext context);
+        void OnAction1(InputAction.CallbackContext context);
+        void OnAction2(InputAction.CallbackContext context);
+        void OnAction3(InputAction.CallbackContext context);
     }
 }
