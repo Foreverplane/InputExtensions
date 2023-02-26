@@ -116,6 +116,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Touch"",
+                    ""type"": ""Value"",
+                    ""id"": ""a212d980-0fc5-4233-a58c-59a06476d958"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -353,18 +362,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""2393160c-ac2a-4816-8da5-d22843c9a98c"",
-                    ""path"": ""<Keyboard>/leftCtrl"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Action.0"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""bc206685-f60a-4d65-8fa0-49e97b81915b"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -470,6 +468,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""R"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a4a7f15c-fa1d-4c11-99d0-84f6152fcad9"",
+                    ""path"": ""<Touchscreen>/primaryTouch/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Touch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -510,6 +519,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_ActionMap_Action1 = m_ActionMap.FindAction("Action.1", throwIfNotFound: true);
         m_ActionMap_Action2 = m_ActionMap.FindAction("Action.2", throwIfNotFound: true);
         m_ActionMap_Action3 = m_ActionMap.FindAction("Action.3", throwIfNotFound: true);
+        m_ActionMap_Touch = m_ActionMap.FindAction("Touch", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -579,6 +589,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_ActionMap_Action1;
     private readonly InputAction m_ActionMap_Action2;
     private readonly InputAction m_ActionMap_Action3;
+    private readonly InputAction m_ActionMap_Touch;
     public struct ActionMapActions
     {
         private @PlayerControls m_Wrapper;
@@ -593,6 +604,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Action1 => m_Wrapper.m_ActionMap_Action1;
         public InputAction @Action2 => m_Wrapper.m_ActionMap_Action2;
         public InputAction @Action3 => m_Wrapper.m_ActionMap_Action3;
+        public InputAction @Touch => m_Wrapper.m_ActionMap_Touch;
         public InputActionMap Get() { return m_Wrapper.m_ActionMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -632,6 +644,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Action3.started -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnAction3;
                 @Action3.performed -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnAction3;
                 @Action3.canceled -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnAction3;
+                @Touch.started -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnTouch;
+                @Touch.performed -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnTouch;
+                @Touch.canceled -= m_Wrapper.m_ActionMapActionsCallbackInterface.OnTouch;
             }
             m_Wrapper.m_ActionMapActionsCallbackInterface = instance;
             if (instance != null)
@@ -666,6 +681,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Action3.started += instance.OnAction3;
                 @Action3.performed += instance.OnAction3;
                 @Action3.canceled += instance.OnAction3;
+                @Touch.started += instance.OnTouch;
+                @Touch.performed += instance.OnTouch;
+                @Touch.canceled += instance.OnTouch;
             }
         }
     }
@@ -691,5 +709,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnAction1(InputAction.CallbackContext context);
         void OnAction2(InputAction.CallbackContext context);
         void OnAction3(InputAction.CallbackContext context);
+        void OnTouch(InputAction.CallbackContext context);
     }
 }

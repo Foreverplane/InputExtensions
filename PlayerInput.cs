@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +15,8 @@ public class PlayerInput : Singleton<PlayerInput> {
 	public bool IsRightMousePressed => _PlayerControls.ActionMap.RightMouseButton.IsPressed();
 	public bool IsLeftMousePressed => _PlayerControls.ActionMap.LeftMouseButton.IsPressed();
 	
+	// public Vector2 TapOnScreen => _PlayerControls.ActionMap.Tap
+	
 	public bool IsRPressed => _PlayerControls.ActionMap.R.IsPressed();
 	public bool IsRWasPressedLastFrame => _PlayerControls.ActionMap.R.WasPressedThisFrame();
 	
@@ -23,6 +24,14 @@ public class PlayerInput : Singleton<PlayerInput> {
 	public bool IsAction1Pressed => _PlayerControls.ActionMap.Action1.WasPressedThisFrame();
 	public bool IsAction2Pressed => _PlayerControls.ActionMap.Action2.WasPressedThisFrame();
 	public bool IsAction3Pressed => _PlayerControls.ActionMap.Action3.WasPressedThisFrame();
+	public TouchInput Touch
+	{
+		get {
+			var position = _PlayerControls.ActionMap.Touch.ReadValue<Vector2>();
+			var isPressed = _PlayerControls.ActionMap.Touch.WasPerformedThisFrame();
+			return new TouchInput(isPressed, position);
+		}
+	}
 
 	private PlayerControls _PlayerControls;
 	[SerializeField]
