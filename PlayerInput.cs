@@ -24,11 +24,14 @@ public class PlayerInput : Singleton<PlayerInput> {
 	public bool IsAction1Pressed => _PlayerControls.ActionMap.Action1.WasPressedThisFrame();
 	public bool IsAction2Pressed => _PlayerControls.ActionMap.Action2.WasPressedThisFrame();
 	public bool IsAction3Pressed => _PlayerControls.ActionMap.Action3.WasPressedThisFrame();
+
+	public bool IsModeButtonPressed => _PlayerControls.ActionMap.ModeButton.WasPressedThisFrame();
+	
 	public TouchInput Touch
 	{
 		get {
 			var position = _PlayerControls.ActionMap.Touch.ReadValue<Vector2>();
-			var isPressed = _PlayerControls.ActionMap.Touch.WasPerformedThisFrame();
+			var isPressed = _PlayerControls.ActionMap.TouchPressed.IsPressed();
 			return new TouchInput(isPressed, position);
 		}
 	}
