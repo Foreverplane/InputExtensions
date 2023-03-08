@@ -4,28 +4,21 @@ using UnityEngine;
 
 [DefaultExecutionOrder(-999)]
 public class PlayerInput : Singleton<PlayerInput> {
-
-	public bool JumpIsPressed => _PlayerControls.ActionMap.Jump.IsPressed();
-	public Vector2 MoveVectorWithMouse => _PlayerControls.ActionMap.RightMouseButton.IsPressed() ?
-		_PlayerControls.ActionMap.MoveWithMouse.ReadValue<Vector2>() :
-		_PlayerControls.ActionMap.Move.ReadValue<Vector2>();
-
-	public Vector2 MoveVector => _PlayerControls.ActionMap.Move.ReadValue<Vector2>();
-
-	public bool IsRightMousePressed => _PlayerControls.ActionMap.RightMouseButton.IsPressed();
-	public bool IsLeftMousePressed => _PlayerControls.ActionMap.LeftMouseButton.IsPressed();
 	
-	// public Vector2 TapOnScreen => _PlayerControls.ActionMap.Tap
-	
-	public bool IsRPressed => _PlayerControls.ActionMap.R.IsPressed();
-	public bool IsRWasPressedLastFrame => _PlayerControls.ActionMap.R.WasPressedThisFrame();
-	
-	public bool IsAction0Pressed => _PlayerControls.ActionMap.Action0.WasPressedThisFrame();
-	public bool IsAction1Pressed => _PlayerControls.ActionMap.Action1.WasPressedThisFrame();
-	public bool IsAction2Pressed => _PlayerControls.ActionMap.Action2.WasPressedThisFrame();
-	public bool IsAction3Pressed => _PlayerControls.ActionMap.Action3.WasPressedThisFrame();
 
-	public bool IsModeButtonPressed => _PlayerControls.ActionMap.ModeButton.WasPressedThisFrame();
+	public Vector2 MoveVector => _PlayerControls.ActionMap.StickLeft.ReadValue<Vector2>();
+	
+	public bool IsButtonNorthPressed => _PlayerControls.ActionMap.ButtonNorth.WasPressedThisFrame();
+	public bool IsButtonSouthPressed => _PlayerControls.ActionMap.ButtonSouth.WasPressedThisFrame();
+	public bool IsButtonWestPressed => _PlayerControls.ActionMap.ButtonWest.WasPressedThisFrame();
+	public bool IsButtonEastPressed => _PlayerControls.ActionMap.ButtonEast.WasPressedThisFrame();
+	
+	public bool IsDPadUpPressed => _PlayerControls.ActionMap.DPadUp.WasPressedThisFrame();
+	public bool IsDPadDownPressed => _PlayerControls.ActionMap.DPadDown.WasPressedThisFrame();
+	public bool IsDPadLeftPressed => _PlayerControls.ActionMap.DPadLeft.WasPressedThisFrame();
+	public bool IsDPadRightPressed => _PlayerControls.ActionMap.DPadRight.WasPressedThisFrame();
+
+	public bool IsSelectPressed => _PlayerControls.ActionMap.Select.WasPressedThisFrame();
 	
 	public TouchInput Touch
 	{
