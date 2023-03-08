@@ -1,12 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [DefaultExecutionOrder(-999)]
+[Obsolete("For ecs systems please use in a way similar to PlayerAttackInputSystem")]
 public class PlayerInput : Singleton<PlayerInput> {
 	
 
-	public Vector2 MoveVector => _PlayerControls.ActionMap.StickLeft.ReadValue<Vector2>();
+	public Vector2 StickLeft => _PlayerControls.ActionMap.StickLeft.ReadValue<Vector2>();
 	
 	public bool IsButtonNorthPressed => _PlayerControls.ActionMap.ButtonNorth.WasPressedThisFrame();
 	public bool IsButtonSouthPressed => _PlayerControls.ActionMap.ButtonSouth.WasPressedThisFrame();
@@ -30,8 +32,7 @@ public class PlayerInput : Singleton<PlayerInput> {
 	}
 
 	private PlayerControls _PlayerControls;
-	[SerializeField]
-	private Vector2 _MoveVector;
+
 	void Awake() {
 		_PlayerControls = new PlayerControls();
 	}
@@ -42,7 +43,4 @@ public class PlayerInput : Singleton<PlayerInput> {
 		_PlayerControls.Disable();
 	}
 
-	private void Update() {
-		_MoveVector = MoveVector;
-	}
 }
