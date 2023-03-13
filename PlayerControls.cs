@@ -37,6 +37,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Stick.Right"",
+                    ""type"": ""Value"",
+                    ""id"": ""0a081270-e6b4-48b0-ba24-7ea69d1e07e7"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
                     ""name"": ""Button.North"",
                     ""type"": ""Button"",
                     ""id"": ""3d68589c-e27e-4caa-84fa-a02c53001276"",
@@ -213,61 +222,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Stick.Left"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Arrows"",
-                    ""id"": ""57370d79-f4ca-4927-bdeb-b2f0d150ff0f"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Stick.Left"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""855eb684-a8ea-49fd-bb10-8ae1c106e22d"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Stick.Left"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""bf845ff2-901a-4a13-920a-22f915ec7f33"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Stick.Left"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""c0e72369-5a2e-445b-b732-b03d73d47ca8"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Stick.Left"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""f2186cce-29c9-4fd5-beed-d3b574b0b428"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Stick.Left"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -587,6 +541,83 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3b4979d4-c071-4b4d-8b34-2b2d26a147a7"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Stick.Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c79bba5d-987b-4e29-820f-5b952504e5bd"",
+                    ""path"": ""<DualShockGamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Stick.Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Arrows"",
+                    ""id"": ""9b38698d-aef1-4ab4-a9e7-f02a506d9635"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Stick.Right"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""26e88ed3-c67c-4c3e-a6c6-806b0ae256c5"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Stick.Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""1c9d531a-967c-4267-9701-30bb3ef9dd46"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Stick.Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""2744f4be-b8ef-4305-a615-a19717b98921"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Stick.Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""dc5b829b-2185-4d66-b3d1-2bb52cfaf9c4"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Stick.Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -618,6 +649,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // ActionMap
         m_ActionMap = asset.FindActionMap("ActionMap", throwIfNotFound: true);
         m_ActionMap_StickLeft = m_ActionMap.FindAction("Stick.Left", throwIfNotFound: true);
+        m_ActionMap_StickRight = m_ActionMap.FindAction("Stick.Right", throwIfNotFound: true);
         m_ActionMap_ButtonNorth = m_ActionMap.FindAction("Button.North", throwIfNotFound: true);
         m_ActionMap_ButtonSouth = m_ActionMap.FindAction("Button.South", throwIfNotFound: true);
         m_ActionMap_ButtonWest = m_ActionMap.FindAction("Button.West", throwIfNotFound: true);
@@ -691,6 +723,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_ActionMap;
     private List<IActionMapActions> m_ActionMapActionsCallbackInterfaces = new List<IActionMapActions>();
     private readonly InputAction m_ActionMap_StickLeft;
+    private readonly InputAction m_ActionMap_StickRight;
     private readonly InputAction m_ActionMap_ButtonNorth;
     private readonly InputAction m_ActionMap_ButtonSouth;
     private readonly InputAction m_ActionMap_ButtonWest;
@@ -707,6 +740,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         private @PlayerControls m_Wrapper;
         public ActionMapActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @StickLeft => m_Wrapper.m_ActionMap_StickLeft;
+        public InputAction @StickRight => m_Wrapper.m_ActionMap_StickRight;
         public InputAction @ButtonNorth => m_Wrapper.m_ActionMap_ButtonNorth;
         public InputAction @ButtonSouth => m_Wrapper.m_ActionMap_ButtonSouth;
         public InputAction @ButtonWest => m_Wrapper.m_ActionMap_ButtonWest;
@@ -730,6 +764,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @StickLeft.started += instance.OnStickLeft;
             @StickLeft.performed += instance.OnStickLeft;
             @StickLeft.canceled += instance.OnStickLeft;
+            @StickRight.started += instance.OnStickRight;
+            @StickRight.performed += instance.OnStickRight;
+            @StickRight.canceled += instance.OnStickRight;
             @ButtonNorth.started += instance.OnButtonNorth;
             @ButtonNorth.performed += instance.OnButtonNorth;
             @ButtonNorth.canceled += instance.OnButtonNorth;
@@ -770,6 +807,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @StickLeft.started -= instance.OnStickLeft;
             @StickLeft.performed -= instance.OnStickLeft;
             @StickLeft.canceled -= instance.OnStickLeft;
+            @StickRight.started -= instance.OnStickRight;
+            @StickRight.performed -= instance.OnStickRight;
+            @StickRight.canceled -= instance.OnStickRight;
             @ButtonNorth.started -= instance.OnButtonNorth;
             @ButtonNorth.performed -= instance.OnButtonNorth;
             @ButtonNorth.canceled -= instance.OnButtonNorth;
@@ -832,6 +872,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public interface IActionMapActions
     {
         void OnStickLeft(InputAction.CallbackContext context);
+        void OnStickRight(InputAction.CallbackContext context);
         void OnButtonNorth(InputAction.CallbackContext context);
         void OnButtonSouth(InputAction.CallbackContext context);
         void OnButtonWest(InputAction.CallbackContext context);
