@@ -55,6 +55,24 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Trigger.Left"",
+                    ""type"": ""Button"",
+                    ""id"": ""40d09d8c-ebee-4bdb-85b4-13d2098c2e5d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Trigger.Right"",
+                    ""type"": ""Button"",
+                    ""id"": ""ad97f0a3-6d10-4650-8c8e-78724b07f808"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Button.South"",
                     ""type"": ""Button"",
                     ""id"": ""dbafcc01-00ea-431c-b4bf-64b1ee5d2ea2"",
@@ -618,6 +636,72 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Stick.Right"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fe1195d0-3dc9-427d-8f67-d2aa35426242"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Trigger.Left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""16309239-a509-4aab-ad73-d1fe96c24450"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Trigger.Left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c66d1076-1036-4ebf-9ff3-8079ca16ed53"",
+                    ""path"": ""<DualShockGamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Trigger.Left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""941c66b9-1359-4b3f-a95a-a3b2ca87a76e"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Trigger.Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""85eadc5a-c91b-4483-bf71-04abdadcbf16"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Trigger.Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""753964b0-6775-4048-9001-ef5846e03b52"",
+                    ""path"": ""<DualShockGamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Trigger.Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -651,6 +735,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_ActionMap_StickLeft = m_ActionMap.FindAction("Stick.Left", throwIfNotFound: true);
         m_ActionMap_StickRight = m_ActionMap.FindAction("Stick.Right", throwIfNotFound: true);
         m_ActionMap_ButtonNorth = m_ActionMap.FindAction("Button.North", throwIfNotFound: true);
+        m_ActionMap_TriggerLeft = m_ActionMap.FindAction("Trigger.Left", throwIfNotFound: true);
+        m_ActionMap_TriggerRight = m_ActionMap.FindAction("Trigger.Right", throwIfNotFound: true);
         m_ActionMap_ButtonSouth = m_ActionMap.FindAction("Button.South", throwIfNotFound: true);
         m_ActionMap_ButtonWest = m_ActionMap.FindAction("Button.West", throwIfNotFound: true);
         m_ActionMap_ButtonEast = m_ActionMap.FindAction("Button.East", throwIfNotFound: true);
@@ -725,6 +811,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_ActionMap_StickLeft;
     private readonly InputAction m_ActionMap_StickRight;
     private readonly InputAction m_ActionMap_ButtonNorth;
+    private readonly InputAction m_ActionMap_TriggerLeft;
+    private readonly InputAction m_ActionMap_TriggerRight;
     private readonly InputAction m_ActionMap_ButtonSouth;
     private readonly InputAction m_ActionMap_ButtonWest;
     private readonly InputAction m_ActionMap_ButtonEast;
@@ -742,6 +830,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @StickLeft => m_Wrapper.m_ActionMap_StickLeft;
         public InputAction @StickRight => m_Wrapper.m_ActionMap_StickRight;
         public InputAction @ButtonNorth => m_Wrapper.m_ActionMap_ButtonNorth;
+        public InputAction @TriggerLeft => m_Wrapper.m_ActionMap_TriggerLeft;
+        public InputAction @TriggerRight => m_Wrapper.m_ActionMap_TriggerRight;
         public InputAction @ButtonSouth => m_Wrapper.m_ActionMap_ButtonSouth;
         public InputAction @ButtonWest => m_Wrapper.m_ActionMap_ButtonWest;
         public InputAction @ButtonEast => m_Wrapper.m_ActionMap_ButtonEast;
@@ -770,6 +860,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @ButtonNorth.started += instance.OnButtonNorth;
             @ButtonNorth.performed += instance.OnButtonNorth;
             @ButtonNorth.canceled += instance.OnButtonNorth;
+            @TriggerLeft.started += instance.OnTriggerLeft;
+            @TriggerLeft.performed += instance.OnTriggerLeft;
+            @TriggerLeft.canceled += instance.OnTriggerLeft;
+            @TriggerRight.started += instance.OnTriggerRight;
+            @TriggerRight.performed += instance.OnTriggerRight;
+            @TriggerRight.canceled += instance.OnTriggerRight;
             @ButtonSouth.started += instance.OnButtonSouth;
             @ButtonSouth.performed += instance.OnButtonSouth;
             @ButtonSouth.canceled += instance.OnButtonSouth;
@@ -813,6 +909,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @ButtonNorth.started -= instance.OnButtonNorth;
             @ButtonNorth.performed -= instance.OnButtonNorth;
             @ButtonNorth.canceled -= instance.OnButtonNorth;
+            @TriggerLeft.started -= instance.OnTriggerLeft;
+            @TriggerLeft.performed -= instance.OnTriggerLeft;
+            @TriggerLeft.canceled -= instance.OnTriggerLeft;
+            @TriggerRight.started -= instance.OnTriggerRight;
+            @TriggerRight.performed -= instance.OnTriggerRight;
+            @TriggerRight.canceled -= instance.OnTriggerRight;
             @ButtonSouth.started -= instance.OnButtonSouth;
             @ButtonSouth.performed -= instance.OnButtonSouth;
             @ButtonSouth.canceled -= instance.OnButtonSouth;
@@ -874,6 +976,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnStickLeft(InputAction.CallbackContext context);
         void OnStickRight(InputAction.CallbackContext context);
         void OnButtonNorth(InputAction.CallbackContext context);
+        void OnTriggerLeft(InputAction.CallbackContext context);
+        void OnTriggerRight(InputAction.CallbackContext context);
         void OnButtonSouth(InputAction.CallbackContext context);
         void OnButtonWest(InputAction.CallbackContext context);
         void OnButtonEast(InputAction.CallbackContext context);

@@ -10,6 +10,10 @@ public class PlayerInput : Singleton<PlayerInput> {
 
 	public Vector2 StickLeft => _PlayerControls.ActionMap.StickLeft.ReadValue<Vector2>();
 	public Vector2 StickRight => _PlayerControls.ActionMap.StickRight.ReadValue<Vector2>();
+	
+	public bool IsTriggerLeftPressed => _PlayerControls.ActionMap.TriggerLeft.WasPressedThisFrame();
+	public bool IsTriggerRightPressed => _PlayerControls.ActionMap.TriggerRight.WasPressedThisFrame();
+	
 	public bool IsButtonNorthPressed => _PlayerControls.ActionMap.ButtonNorth.WasPressedThisFrame();
 	public bool IsButtonSouthPressed => _PlayerControls.ActionMap.ButtonSouth.WasPressedThisFrame();
 	public bool IsButtonWestPressed => _PlayerControls.ActionMap.ButtonWest.WasPressedThisFrame();
