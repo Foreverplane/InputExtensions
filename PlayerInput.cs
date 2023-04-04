@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [DefaultExecutionOrder(-999)]
 [Obsolete("For ecs systems please use in a way similar to PlayerAttackInputSystem")]
@@ -25,8 +26,11 @@ public class PlayerInput : Singleton<PlayerInput> {
 	public bool IsDPadRightPressed => _PlayerControls.ActionMap.DPadRight.WasPressedThisFrame();
 
 	public bool IsSelectPressed => _PlayerControls.ActionMap.Select.WasPressedThisFrame();
-	
-	public TouchInput Touch
+
+	public InputAction ShoulderRightAction => _PlayerControls.ActionMap.ShoulderRight;
+
+
+    public TouchInput Touch
 	{
 		get {
 			var position = _PlayerControls.ActionMap.Touch.ReadValue<Vector2>();

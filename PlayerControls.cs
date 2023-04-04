@@ -161,6 +161,24 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Shoulder.Right"",
+                    ""type"": ""Button"",
+                    ""id"": ""81c19a07-235e-4f9d-bab4-b7b75c831453"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Shoulder.Left"",
+                    ""type"": ""Button"",
+                    ""id"": ""04ab6c2b-9b7a-475a-a94c-85303806edff"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -702,6 +720,72 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Trigger.Right"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ebd68ea6-54aa-4b40-bba8-3c431cf12bf5"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoulder.Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eab378d0-28d8-483f-ba8a-fe8cff854888"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoulder.Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5504033b-0711-46f1-95e8-5a128987a448"",
+                    ""path"": ""<DualShockGamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoulder.Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""76810740-1ef3-443f-8fb2-1d2b4a3e45b9"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoulder.Left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""83876a8e-6db7-4cde-8e03-09abe1f349d5"",
+                    ""path"": ""<Keyboard>/u"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoulder.Left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""10f64332-ebc4-4e3f-b791-93bf2c2f2ee0"",
+                    ""path"": ""<DualShockGamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoulder.Left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -747,6 +831,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_ActionMap_Select = m_ActionMap.FindAction("Select", throwIfNotFound: true);
         m_ActionMap_Touch = m_ActionMap.FindAction("Touch", throwIfNotFound: true);
         m_ActionMap_TouchPressed = m_ActionMap.FindAction("TouchPressed", throwIfNotFound: true);
+        m_ActionMap_ShoulderRight = m_ActionMap.FindAction("Shoulder.Right", throwIfNotFound: true);
+        m_ActionMap_ShoulderLeft = m_ActionMap.FindAction("Shoulder.Left", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -823,6 +909,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_ActionMap_Select;
     private readonly InputAction m_ActionMap_Touch;
     private readonly InputAction m_ActionMap_TouchPressed;
+    private readonly InputAction m_ActionMap_ShoulderRight;
+    private readonly InputAction m_ActionMap_ShoulderLeft;
     public struct ActionMapActions
     {
         private @PlayerControls m_Wrapper;
@@ -842,6 +930,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Select => m_Wrapper.m_ActionMap_Select;
         public InputAction @Touch => m_Wrapper.m_ActionMap_Touch;
         public InputAction @TouchPressed => m_Wrapper.m_ActionMap_TouchPressed;
+        public InputAction @ShoulderRight => m_Wrapper.m_ActionMap_ShoulderRight;
+        public InputAction @ShoulderLeft => m_Wrapper.m_ActionMap_ShoulderLeft;
         public InputActionMap Get() { return m_Wrapper.m_ActionMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -896,6 +986,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @TouchPressed.started += instance.OnTouchPressed;
             @TouchPressed.performed += instance.OnTouchPressed;
             @TouchPressed.canceled += instance.OnTouchPressed;
+            @ShoulderRight.started += instance.OnShoulderRight;
+            @ShoulderRight.performed += instance.OnShoulderRight;
+            @ShoulderRight.canceled += instance.OnShoulderRight;
+            @ShoulderLeft.started += instance.OnShoulderLeft;
+            @ShoulderLeft.performed += instance.OnShoulderLeft;
+            @ShoulderLeft.canceled += instance.OnShoulderLeft;
         }
 
         private void UnregisterCallbacks(IActionMapActions instance)
@@ -945,6 +1041,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @TouchPressed.started -= instance.OnTouchPressed;
             @TouchPressed.performed -= instance.OnTouchPressed;
             @TouchPressed.canceled -= instance.OnTouchPressed;
+            @ShoulderRight.started -= instance.OnShoulderRight;
+            @ShoulderRight.performed -= instance.OnShoulderRight;
+            @ShoulderRight.canceled -= instance.OnShoulderRight;
+            @ShoulderLeft.started -= instance.OnShoulderLeft;
+            @ShoulderLeft.performed -= instance.OnShoulderLeft;
+            @ShoulderLeft.canceled -= instance.OnShoulderLeft;
         }
 
         public void RemoveCallbacks(IActionMapActions instance)
@@ -988,5 +1090,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnSelect(InputAction.CallbackContext context);
         void OnTouch(InputAction.CallbackContext context);
         void OnTouchPressed(InputAction.CallbackContext context);
+        void OnShoulderRight(InputAction.CallbackContext context);
+        void OnShoulderLeft(InputAction.CallbackContext context);
     }
 }
