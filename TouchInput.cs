@@ -12,4 +12,9 @@ public struct TouchInput
 		IsPressed = isPressed;
 		Position = position;
 	}
+
+	public override string ToString()
+	{
+		return $"IsPressed: {IsPressed}, Position: {Position}";
+	}
 }
