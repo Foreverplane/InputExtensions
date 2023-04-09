@@ -197,6 +197,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Scroll"",
+                    ""type"": ""Value"",
+                    ""id"": ""54b9cff5-3614-4f73-9c57-5e1f8dade0fc"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -903,6 +912,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Stick.Right"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e11b169b-cdea-4c82-8065-f340c07ecba6"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -952,6 +972,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_ActionMap_ShoulderLeft = m_ActionMap.FindAction("Shoulder.Left", throwIfNotFound: true);
         m_ActionMap_StickRightPress = m_ActionMap.FindAction("Stick.Right.Press", throwIfNotFound: true);
         m_ActionMap_StickLeftPress = m_ActionMap.FindAction("Stick.Left.Press", throwIfNotFound: true);
+        m_ActionMap_Scroll = m_ActionMap.FindAction("Scroll", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1032,6 +1053,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_ActionMap_ShoulderLeft;
     private readonly InputAction m_ActionMap_StickRightPress;
     private readonly InputAction m_ActionMap_StickLeftPress;
+    private readonly InputAction m_ActionMap_Scroll;
     public struct ActionMapActions
     {
         private @PlayerControls m_Wrapper;
@@ -1055,6 +1077,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @ShoulderLeft => m_Wrapper.m_ActionMap_ShoulderLeft;
         public InputAction @StickRightPress => m_Wrapper.m_ActionMap_StickRightPress;
         public InputAction @StickLeftPress => m_Wrapper.m_ActionMap_StickLeftPress;
+        public InputAction @Scroll => m_Wrapper.m_ActionMap_Scroll;
         public InputActionMap Get() { return m_Wrapper.m_ActionMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1121,6 +1144,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @StickLeftPress.started += instance.OnStickLeftPress;
             @StickLeftPress.performed += instance.OnStickLeftPress;
             @StickLeftPress.canceled += instance.OnStickLeftPress;
+            @Scroll.started += instance.OnScroll;
+            @Scroll.performed += instance.OnScroll;
+            @Scroll.canceled += instance.OnScroll;
         }
 
         private void UnregisterCallbacks(IActionMapActions instance)
@@ -1182,6 +1208,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @StickLeftPress.started -= instance.OnStickLeftPress;
             @StickLeftPress.performed -= instance.OnStickLeftPress;
             @StickLeftPress.canceled -= instance.OnStickLeftPress;
+            @Scroll.started -= instance.OnScroll;
+            @Scroll.performed -= instance.OnScroll;
+            @Scroll.canceled -= instance.OnScroll;
         }
 
         public void RemoveCallbacks(IActionMapActions instance)
@@ -1229,5 +1258,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnShoulderLeft(InputAction.CallbackContext context);
         void OnStickRightPress(InputAction.CallbackContext context);
         void OnStickLeftPress(InputAction.CallbackContext context);
+        void OnScroll(InputAction.CallbackContext context);
     }
 }

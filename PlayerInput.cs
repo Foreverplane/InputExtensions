@@ -32,6 +32,9 @@ public class PlayerInput : Singleton<PlayerInput> {
 	public InputAction ShoulderLeftAction => _playerControls.ActionMap.ShoulderLeft;
 	
 	public InputAction StickRightPress => _playerControls.ActionMap.StickRightPress;
+	public InputAction StickLeftPress => _playerControls.ActionMap.StickLeftPress;
+	
+	public InputAction Scroll => _playerControls.ActionMap.Scroll;
 
     public TouchInput Touch
 	{
@@ -54,5 +57,10 @@ public class PlayerInput : Singleton<PlayerInput> {
 	void OnDisable() {
 		_playerControls.Disable();
 	}
-	
+
+	void Update()
+	{
+		Debug.Log($"Scroll V2 {Scroll.ReadValue<Vector2>()}");
+
+	}
 }
