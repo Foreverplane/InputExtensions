@@ -882,6 +882,17 @@
                 },
                 {
                     "name": "",
+                    "id": "f651b207-50de-4aa0-abe6-7675ed73e1b8",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Stick.Left.Press",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "fecba5cd-a402-4e37-a6ba-2da0ddc17d6d",
                     "path": "<Pointer>/delta",
                     "interactions": "",

@@ -44,8 +44,10 @@ public class PlayerInput : Singleton<PlayerInput> {
 			return new TouchInput(isPressed, position);
 		}
 	}
+    public bool IsLeftStickPressed =>StickLeftPress.IsPressed();
+    public bool IsRightStickPressed =>StickRightPress.IsPressed();
 
-	private PlayerControls _playerControls;
+    private PlayerControls _playerControls;
 
 
 	void Awake() {
@@ -60,7 +62,7 @@ public class PlayerInput : Singleton<PlayerInput> {
 
 	void Update()
 	{
-		Debug.Log($"Scroll V2 {Scroll.ReadValue<Vector2>()}");
+		// Debug.Log($"Scroll V2 {Scroll.ReadValue<Vector2>()}");
 
 	}
 }
